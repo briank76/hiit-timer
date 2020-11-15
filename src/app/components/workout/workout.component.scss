@@ -1,0 +1,44 @@
+@import "bootstrap";
+
+.timer-display {
+    font-size: 6rem;
+    text-align: center;
+}
+
+.timer-display-active {
+    border: 1px solid #28a745;
+    -moz-box-shadow:    inset 0 0 10px #28a745;
+    -webkit-box-shadow: inset 0 0 10px #28a745;
+    box-shadow:         inset 0 0 10px #28a745;
+}
+
+.timer-display-warning {
+    border: 1px solid yellow;
+    -moz-box-shadow:    inset 0 0 10px yellow;
+    -webkit-box-shadow: inset 0 0 10px yellow;
+    box-shadow:         inset 0 0 10px yellow;
+}
+
+.timer-border-stop {
+    border: 1px solid red;
+    -moz-box-shadow:    inset 0 0 10px red;
+    -webkit-box-shadow: inset 0 0 10px red;
+    box-shadow:         inset 0 0 10px red;
+}
+
+.timer-col {
+    @extend .col-xs-12 !optional;
+    @extend .col-sm-10 !optional;
+    @extend .col-md-7 !optional;
+    @extend .col-lg-4 !optional;
+    @extend .mx-auto !optional;
+}
+
+.timer-btn {
+    @extend .btn-lg !optional;
+    @extend .btn-block !optional;
+}
+
+.timer-btn-row-spacer {
+    margin-top: 10px;
+}

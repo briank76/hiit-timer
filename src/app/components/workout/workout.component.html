@@ -1,0 +1,19 @@
+
+<div class="row h-100 justify-content-center align-items-center">
+    <div class="timer-col" style="margin-top:2rem;">
+        <div class="timer-display timer-display-active">
+            <countdown #workoutTimer [config]="{leftTime: 30, demand: true, notify: [5], format: 'mm:ss'}" 
+            (event)="handleEvent($event)"></countdown>
+        </div>
+    </div>
+</div>
+<div class="row timer-btn-row-spacer">
+    <div class="timer-col">
+        <button (click)="beginWorkout()" [disabled]="workoutActive" class="btn btn-success timer-btn">Start/Resume</button>
+    </div>
+</div>
+<div class="row timer-btn-row-spacer">
+    <div class="timer-col">
+        <button (click)="pauseWorkout()" [disabled]="!workoutActive" class="btn btn-warning timer-btn">Pause</button>
+    </div>
+</div>
