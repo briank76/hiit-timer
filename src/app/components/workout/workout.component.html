@@ -1,8 +1,12 @@
 
 <div class="row h-100 justify-content-center align-items-center">
     <div class="timer-col" style="margin-top:2rem;">
-        <div class="timer-display timer-display-active">
-            <countdown #workoutTimer [config]="{leftTime: 30, demand: true, notify: [5], format: 'mm:ss'}" 
+        <div class="timer-display" [ngClass]="{
+            'timer-display-active':activeTimerDisplayId === 'active',
+            'timer-display-warning':activeTimerDisplayId === 'warning',
+            'timer-display-done':activeTimerDisplayId === 'done'
+        }">
+            <countdown #workoutTimer [config]="{leftTime: 10, demand: true, notify: [5], format: 'mm:ss'}" 
             (event)="handleEvent($event)"></countdown>
         </div>
     </div>

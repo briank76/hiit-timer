@@ -1,29 +1,32 @@
 @import "bootstrap";
 
+$inset-fade: 25px !default;
+
 .timer-display {
     font-size: 6rem;
     text-align: center;
+    border-radius: $border-radius;
 }
 
 .timer-display-active {
-    border: 1px solid #28a745;
-    -moz-box-shadow:    inset 0 0 10px #28a745;
-    -webkit-box-shadow: inset 0 0 10px #28a745;
-    box-shadow:         inset 0 0 10px #28a745;
+    border: 1px solid $green;
+    -moz-box-shadow:    inset 0 0 $inset-fade $green;
+    -webkit-box-shadow: inset 0 0 $inset-fade $green;
+    box-shadow:         inset 0 0 $inset-fade $green;
 }
 
 .timer-display-warning {
-    border: 1px solid yellow;
-    -moz-box-shadow:    inset 0 0 10px yellow;
-    -webkit-box-shadow: inset 0 0 10px yellow;
-    box-shadow:         inset 0 0 10px yellow;
+    border: 1px solid $yellow;
+    -moz-box-shadow:    inset 0 0 $inset-fade $yellow;
+    -webkit-box-shadow: inset 0 0 $inset-fade $yellow;
+    box-shadow:         inset 0 0 $inset-fade $yellow;
 }
 
-.timer-border-stop {
-    border: 1px solid red;
-    -moz-box-shadow:    inset 0 0 10px red;
-    -webkit-box-shadow: inset 0 0 10px red;
-    box-shadow:         inset 0 0 10px red;
+.timer-display-done {
+    border: 1px solid $red;
+    -moz-box-shadow:    inset 0 0 $inset-fade $red;
+    -webkit-box-shadow: inset 0 0 $inset-fade $red;
+    box-shadow:         inset 0 0 $inset-fade $red;
 }
 
 .timer-col {
