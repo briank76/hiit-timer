@@ -1,5 +1,6 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { CountdownComponent } from 'ngx-countdown';
+import { timer } from 'rxjs';
 import { TimerEventModel } from 'src/app/models/timer-event.model';
 
 @Component({
@@ -10,10 +11,27 @@ import { TimerEventModel } from 'src/app/models/timer-event.model';
 export class WorkoutComponent implements OnInit {
   @ViewChild('workoutTimer') private workoutTimer: CountdownComponent;
   public workoutActive = false;
+  public activeTimerDisplayId = '';
+  private timerDisplayId = [
+    { id: 'start', value: 'active' },
+    { id: 'done', value: 'done' },
+    { id: 'notify', value: 'warning' },
+    { id: 'pause', value: 'warning'}
+  ]
 
   constructor() { }
 
   ngOnInit(): void {
+    this.activeTimerDisplayId = 'active';
+  }
+
+  private getTimerDisplayId(id: string): string {
+    let retVal = '';
+    const item = this.timerDisplayId.find((t) => t.id === id);
+    if (item) {
+      retVal = item.value;
+    }
+    return retVal;
   }
 
   public beginWorkout() {
@@ -24,12 +42,15 @@ export class WorkoutComponent implements OnInit {
 
   public pauseWorkout() {
     if (this.workoutTimer) {
-      this.workoutTimer.pause();    }
+      this.workoutTimer.pause();    
+    }
   }
 
-  public handleEvent($event): void {
+  public handleEvent($event: any): void {
+    console.log($event);
     if ($event) {
       const timeModel: TimerEventModel = $event;
+      const timerDisplayId = this.getTimerDisplayId(timeModel.action);
       switch(timeModel.action) {
         case 'start':
           this.workoutActive = true;
@@ -42,6 +63,7 @@ export class WorkoutComponent implements OnInit {
         case 'done':
           break;
       }
+      this.activeTimerDisplayId = timerDisplayId;
     }
   }
 }
