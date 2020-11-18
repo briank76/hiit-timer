@@ -1,23 +1,28 @@
-
-<div class="row h-100 justify-content-center align-items-center">
+<ng-container *ngIf="routineModel">
+  <div class="row h-100 justify-content-center align-items-center">
     <div class="timer-col" style="margin-top:2rem;">
-        <div class="timer-display" [ngClass]="{
-            'timer-display-active':activeTimerDisplayId === 'active',
-            'timer-display-warning':activeTimerDisplayId === 'warning',
-            'timer-display-done':activeTimerDisplayId === 'done'
-        }">
-            <countdown #workoutTimer [config]="{leftTime: 10, demand: true, notify: [5], format: 'mm:ss'}" 
-            (event)="handleEvent($event)"></countdown>
-        </div>
+      <div>
+        <span>{{workoutModel.title}}</span>
+      </div>
+      <div class="timer-display" [ngClass]="{
+          'timer-display-active':activeTimerDisplayId === 'active',
+          'timer-display-warning':activeTimerDisplayId === 'warning',
+          'timer-display-done':activeTimerDisplayId === 'done'
+      }">
+          <countdown #workoutTimer [config]=this.timerConfig
+          (event)="handleEvent($event)"></countdown>
+      </div>
     </div>
-</div>
-<div class="row timer-btn-row-spacer">
-    <div class="timer-col">
-        <button (click)="beginWorkout()" [disabled]="workoutActive" class="btn btn-success timer-btn">Start/Resume</button>
-    </div>
-</div>
-<div class="row timer-btn-row-spacer">
-    <div class="timer-col">
-        <button (click)="pauseWorkout()" [disabled]="!workoutActive" class="btn btn-warning timer-btn">Pause</button>
-    </div>
-</div>
+  </div>
+  <div class="row timer-btn-row-spacer">
+      <div class="timer-col">
+          <button (click)="beginWorkout()" [disabled]="workoutActive" class="btn btn-success timer-btn">Start/Resume</button>
+      </div>
+  </div>
+  <div class="row timer-btn-row-spacer">
+      <div class="timer-col">
+          <button (click)="pauseWorkout()" [disabled]="!workoutActive" class="btn btn-warning timer-btn">Pause</button>
+      </div>
+  </div>
+</ng-container>
+

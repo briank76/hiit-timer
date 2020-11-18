@@ -125,5 +125,8 @@
       }
     }
   },
-  "defaultProject": "hiit-timer"
+  "defaultProject": "hiit-timer",
+  "cli": {
+    "defaultCollection": "@datorama/akita"
+  }
 }
