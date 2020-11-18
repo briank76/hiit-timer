@@ -1,0 +1,75 @@
+[
+    {
+        "id": 1,
+        "title": "Warm-Up",
+        "repeat": 2,
+        "step": 1,
+        "isCompleted": false,
+        "workout": [
+            {
+                "title": "run in place",
+                "time": 30,
+                "step": 1
+            },
+            {
+                "title": "jumping jacks",
+                "time": 30,
+                "step": 2
+            },
+            {
+                "title": "heisman",
+                "time": 30,
+                "step": 3
+            },
+            {
+                "title": "moving heisman",
+                "time": 30,
+                "step": 4
+            },
+            {
+                "title": "butt-kicks",
+                "time": 30,
+                "step": 5
+            },
+            {
+                "title": "high-knee",
+                "time": 30,
+                "step": 6
+            },
+            {
+                "title": "mummy-kicks",
+                "time": 30,
+                "step": 7
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "title": "rest",
+        "repeat": 1,
+        "step": 2,
+        "isCompleted": false,
+        "workout": [
+            {
+                "title": "rest",
+                "time": 30,
+                "step": 1
+            }
+        ]
+
+    },
+    {
+        "id": 3,
+        "title": "stretch",
+        "repeat": 1,
+        "step": 3,
+        "isCompleted": false,
+        "workout": [
+            {
+                "title": "stretch",
+                "time": 180,
+                "step": 1
+            }
+        ]
+    }
+]
